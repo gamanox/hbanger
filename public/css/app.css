@@ -1,0 +1,70 @@
+@media -sass-debug-info{filename{}line{font-family:\000031}}
+html, body, .splash {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+
+@media -sass-debug-info{filename{}line{font-family:\000037}}
+.video {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: block; }
+@media -sass-debug-info{filename{}line{font-family:\000038}}
+  .video .dot {
+    background-image: url("/img/dot.png");
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0; }
+
+@media -sass-debug-info{filename{}line{font-family:\0000319}}
+.logo {
+  width: 550px;
+  height: 251px;
+  display: block;
+  background-image: url("/img/logo.png");
+  background-repeat: no-repeat;
+  opacity: 0.5; }
+
+@media -sass-debug-info{filename{}line{font-family:\0000327}}
+.center-cont {
+  width: 550px;
+  height: 320px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto; }
+@media -sass-debug-info{filename{}line{font-family:\0000337}}
+  .center-cont .social {
+    width: 184px;
+    height: auto;
+    overflow: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px; }
+@media -sass-debug-info{filename{}line{font-family:\0000344}}
+    .center-cont .social a {
+      margin-right: 20px;
+      width: 48px;
+      height: 48px;
+      display: block;
+      float: left; }
+@media -sass-debug-info{filename{}line{font-family:\0000350}}
+    .center-cont .social a.fb {
+      background-image: url("/img/fb.png"); }
+@media -sass-debug-info{filename{}line{font-family:\0000352}}
+    .center-cont .social a.tw {
+      background-image: url("/img/tw.png"); }
+@media -sass-debug-info{filename{}line{font-family:\0000354}}
+    .center-cont .social a.in {
+      background-image: url("/img/in.png");
+      margin-right: 0; }
+
+
+/*# sourceMappingURL=app.css.map*/
