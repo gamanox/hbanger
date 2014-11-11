@@ -24,10 +24,10 @@ resize = ->
   ratio = wW / wH
   if wW > wH
     if ratio > aspect
-      $("#video").width wW
-      $("#video").height "auto"
-      vidH = $("#video").height()
-      $("#video").css
+      $(".splashbg").width wW
+      $(".splashbg").height "auto"
+      vidH = $(".splashbg").height()
+      $(".splashbg").css
         position: "absolute"
         top: "50%"
         left: "50%"
@@ -35,9 +35,9 @@ resize = ->
         marginTop: ((vidH-wH)/2)+(wH/2) * -1 + "px"
 
     else
-      $("#video").width wH * aspect
-      $("#video").height wH
-      $("#video").css
+      $(".splashbg").width wH * aspect
+      $(".splashbg").height wH
+      $(".splashbg").css
         position: "absolute"
         top: "50%"
         left: "50%"
@@ -45,9 +45,9 @@ resize = ->
         marginTop: (wH / 2) * -1 + "px"
 
   else
-    $("#video").height wH
-    $("#video").width wH * aspect
-    $("#video").css
+    $(".splashbg").height wH
+    $(".splashbg").width wH * aspect
+    $(".splashbg").css
       position: "absolute"
       top: "50%"
       left: "50%"
@@ -56,5 +56,7 @@ resize = ->
 
 $ ->
 
-
-  resize()
+  $('.newsbtn').on 'click', ->
+    $('.newsletter-cont').addClass 'show'
+    $('.newsbtn p').html 'subscribe'
+  #resize()

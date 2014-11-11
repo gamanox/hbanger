@@ -1,4 +1,4 @@
-@media -sass-debug-info{filename{}line{font-family:\000031}}
+@media -sass-debug-info{filename{}line{font-family:\0000310}}
 html, body, .splash {
   margin: 0;
   padding: 0;
@@ -6,13 +6,13 @@ html, body, .splash {
   height: 100%;
   overflow: hidden; }
 
-@media -sass-debug-info{filename{}line{font-family:\000037}}
+@media -sass-debug-info{filename{}line{font-family:\0000316}}
 .video {
   width: 100%;
   height: 100%;
   position: relative;
   display: block; }
-@media -sass-debug-info{filename{}line{font-family:\000038}}
+@media -sass-debug-info{filename{}line{font-family:\0000317}}
   .video .dot {
     background-image: url("/img/dot.png");
     width: 100%;
@@ -20,17 +20,25 @@ html, body, .splash {
     position: absolute;
     top: 0;
     left: 0; }
+@media -sass-debug-info{filename{}line{font-family:\0000328}}
+  .video .splashbg {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-image: url("/img/F04.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%; }
 
-@media -sass-debug-info{filename{}line{font-family:\0000319}}
+@media -sass-debug-info{filename{}line{font-family:\0000335}}
 .logo {
   width: 550px;
   height: 251px;
   display: block;
   background-image: url("/img/logo.png");
   background-repeat: no-repeat;
-  opacity: 0.5; }
+  opacity: 1; }
 
-@media -sass-debug-info{filename{}line{font-family:\0000327}}
+@media -sass-debug-info{filename{}line{font-family:\0000343}}
 .center-cont {
   width: 550px;
   height: 320px;
@@ -40,7 +48,7 @@ html, body, .splash {
   right: 0;
   bottom: 0;
   margin: auto; }
-@media -sass-debug-info{filename{}line{font-family:\0000337}}
+@media -sass-debug-info{filename{}line{font-family:\0000353}}
   .center-cont .social {
     width: 184px;
     height: auto;
@@ -48,23 +56,84 @@ html, body, .splash {
     margin-left: auto;
     margin-right: auto;
     margin-top: 60px; }
-@media -sass-debug-info{filename{}line{font-family:\0000344}}
+@media -sass-debug-info{filename{}line{font-family:\0000360}}
     .center-cont .social a {
       margin-right: 20px;
       width: 48px;
       height: 48px;
       display: block;
       float: left; }
-@media -sass-debug-info{filename{}line{font-family:\0000350}}
+@media -sass-debug-info{filename{}line{font-family:\0000366}}
     .center-cont .social a.fb {
       background-image: url("/img/fb.png"); }
-@media -sass-debug-info{filename{}line{font-family:\0000352}}
+@media -sass-debug-info{filename{}line{font-family:\0000368}}
     .center-cont .social a.tw {
       background-image: url("/img/tw.png"); }
-@media -sass-debug-info{filename{}line{font-family:\0000354}}
+@media -sass-debug-info{filename{}line{font-family:\0000370}}
     .center-cont .social a.in {
       background-image: url("/img/in.png");
       margin-right: 0; }
+@media -sass-debug-info{filename{}line{font-family:\0000374}}
+  .center-cont .newsletter-cont {
+    width: 95px;
+    display: block;
+    height: 34px;
+    margin: auto;
+    -webkit-transition: width 0.3s ease-in-out;
+    -moz-transition: width 0.3s ease-in-out;
+    -ms-transition: width 0.3s ease-in-out;
+    transition: width 0.3s ease-in-out; }
+@media -sass-debug-info{filename{}line{font-family:\0000384}}
+    .center-cont .newsletter-cont .email {
+      float: left;
+      display: block;
+      color: #fff;
+      width: 0;
+      height: 34px;
+      text-align: center;
+      border: none;
+      background-color: #000;
+      -webkit-transition: width 0.3s ease-in-out;
+      -moz-transition: width 0.3s ease-in-out;
+      -ms-transition: width 0.3s ease-in-out;
+      transition: width 0.3s ease-in-out; }
+@media -sass-debug-info{filename{}line{font-family:\0000397}}
+    .center-cont .newsletter-cont.show {
+      width: 225px;
+      -webkit-transition: width 0.3s ease-in-out;
+      -moz-transition: width 0.3s ease-in-out;
+      -ms-transition: width 0.3s ease-in-out;
+      transition: width 0.3s ease-in-out; }
+@media -sass-debug-info{filename{}line{font-family:\00003103}}
+      .center-cont .newsletter-cont.show .email {
+        -webkit-transition: width 0.4s ease-in-out;
+        -moz-transition: width 0.4s ease-in-out;
+        -ms-transition: width 0.4s ease-in-out;
+        transition: width 0.4s ease-in-out;
+        width: 128px; }
+@media -sass-debug-info{filename{}line{font-family:\00003109}}
+    .center-cont .newsletter-cont .newsbtn {
+      margin-left: 15px;
+      float: left;
+      height: 16px;
+      width: 66px;
+      display: block;
+      background-color: #000;
+      color: #fff;
+      padding: 7px;
+      text-align: center;
+      cursor: pointer;
+      padding-bottom: 11px;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none; }
+@media -sass-debug-info{filename{}line{font-family:\00003123}}
+      .center-cont .newsletter-cont .newsbtn p {
+        padding: 0;
+        margin: 0; }
 
 
 /*# sourceMappingURL=app.css.map*/

@@ -14,7 +14,8 @@ html
 	body
 		.splash
 			.video
-				video#video(src="/img/girl_bike.mp4", autoplay, preload="auto", loop)
+				//- video#video(src="/img/girl_bike.mp4", autoplay, preload="auto", loop)
+				.splashbg
 				.dot
 			.center-cont
 				.logo
@@ -22,7 +23,9 @@ html
 					a.fb(href="https://www.facebook.com/pages/Hedbanger/263170540498734?fref=ts", target="_blank")
 					a.tw(href="http://twitter.com/HedbangerBarber", target="_blank")
 					a.in(href="http://instagram.com/hedbangerbarbershopbar", target="_blank")
-					form(name='subscriber_form', action='http://www.mynewsletterbuilder.com/tools/ext_subscribe', method='post', target='_blank')
+				.newsletter-cont
+					
+					form(name='subscriber_form', action='http://www.mynewsletterbuilder.com/tools/ext_subscribe', method='post', target='_blank', class="getnews")
 						input(type='hidden', name='mnb_success_url', value='')
 						input(type='hidden', name='mnb_error_url', value='')
 						input(type='hidden', name='mnb_uid', value='2227092')
@@ -30,14 +33,14 @@ html
 						input(type='hidden', name='mnb_notify', value='')
 						input(type='hidden', name='mnb_nlid', value='')
 						div(align='left')
-							
-							p
-								
-								input(type='text', name='mnb_fields[email]', style='border: 1px solid #333; width: 155px;')
-								| *
-								input(type='hidden', name='mnb_req_fields[email]', value='Email')
-							input(type='hidden', name='mnb_cats[]', value='436691')
-							p
-								input(type='submit', value='Subscribe')
-								span(style='float: right;') 
+					
+							//- input(type='submit', value='Subscribe')
+
+							span(style='float: right;')
+						input(type='text', name='mnb_fields[email]', class="email", placeholder="type email")
+						
+						input(type='hidden', name='mnb_req_fields[email]', value='Email')
+						input(type='hidden', name='mnb_cats[]', value='436691')
+						.newsbtn
+							p get news
 

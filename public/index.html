@@ -16,28 +16,27 @@
   <body>
     <div class="splash">
       <div class="video">
-        <video id="video" src="/img/girl_bike.mp4" autoplay preload="auto" loop></video>
+        <div class="splashbg"></div>
         <div class="dot"></div>
       </div>
       <div class="center-cont">
         <div class="logo"></div>
-        <div class="social"><a href="https://www.facebook.com/pages/Hedbanger/263170540498734?fref=ts" target="_blank" class="fb"></a><a href="http://twitter.com/HedbangerBarber" target="_blank" class="tw"></a><a href="http://instagram.com/hedbangerbarbershopbar" target="_blank" class="in"></a>
-          <form name="subscriber_form" action="http://www.mynewsletterbuilder.com/tools/ext_subscribe" method="post" target="_blank">
+        <div class="social"><a href="https://www.facebook.com/pages/Hedbanger/263170540498734?fref=ts" target="_blank" class="fb"></a><a href="http://twitter.com/HedbangerBarber" target="_blank" class="tw"></a><a href="http://instagram.com/hedbangerbarbershopbar" target="_blank" class="in"></a></div>
+        <div class="newsletter-cont">
+          <form name="subscriber_form" action="http://www.mynewsletterbuilder.com/tools/ext_subscribe" method="post" target="_blank" class="getnews">
             <input type="hidden" name="mnb_success_url" value="">
             <input type="hidden" name="mnb_error_url" value="">
             <input type="hidden" name="mnb_uid" value="2227092">
             <input type="hidden" name="mnb_cat_override" value="add">
             <input type="hidden" name="mnb_notify" value="">
             <input type="hidden" name="mnb_nlid" value="">
-            <div align="left">
-              <p>
-                <input type="text" name="mnb_fields[email]" style="border: 1px solid #333; width: 155px;">*
-                <input type="hidden" name="mnb_req_fields[email]" value="Email">
-              </p>
-              <input type="hidden" name="mnb_cats[]" value="436691">
-              <p>
-                <input type="submit" value="Subscribe"><span style="float: right;"> </span>
-              </p>
+            <div align="left"><span style="float: right;"></span>
+            </div>
+            <input type="text" name="mnb_fields[email]" placeholder="type email" class="email">
+            <input type="hidden" name="mnb_req_fields[email]" value="Email">
+            <input type="hidden" name="mnb_cats[]" value="436691">
+            <div class="newsbtn">
+              <p>get news</p>
             </div>
           </form>
         </div>

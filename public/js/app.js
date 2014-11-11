@@ -11,10 +11,10 @@ resize = function() {
   ratio = wW / wH;
   if (wW > wH) {
     if (ratio > aspect) {
-      $("#video").width(wW);
-      $("#video").height("auto");
-      vidH = $("#video").height();
-      return $("#video").css({
+      $(".splashbg").width(wW);
+      $(".splashbg").height("auto");
+      vidH = $(".splashbg").height();
+      return $(".splashbg").css({
         position: "absolute",
         top: "50%",
         left: "50%",
@@ -22,9 +22,9 @@ resize = function() {
         marginTop: ((vidH - wH) / 2) + (wH / 2) * -1 + "px"
       });
     } else {
-      $("#video").width(wH * aspect);
-      $("#video").height(wH);
-      return $("#video").css({
+      $(".splashbg").width(wH * aspect);
+      $(".splashbg").height(wH);
+      return $(".splashbg").css({
         position: "absolute",
         top: "50%",
         left: "50%",
@@ -33,9 +33,9 @@ resize = function() {
       });
     }
   } else {
-    $("#video").height(wH);
-    $("#video").width(wH * aspect);
-    return $("#video").css({
+    $(".splashbg").height(wH);
+    $(".splashbg").width(wH * aspect);
+    return $(".splashbg").css({
       position: "absolute",
       top: "50%",
       left: "50%",
@@ -46,7 +46,10 @@ resize = function() {
 };
 
 $(function() {
-  return resize();
+  return $('.newsbtn').on('click', function() {
+    $('.newsletter-cont').addClass('show');
+    return $('.newsbtn p').html('subscribe');
+  });
 });
 
 var MainController;

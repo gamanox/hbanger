@@ -1,3 +1,12 @@
+
+=noselect
+	-webkit-touch-callout: none
+	-webkit-user-select: none
+	-khtml-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+	user-select: none
+
 html, body, .splash
 	margin: 0
 	padding: 0
@@ -16,13 +25,20 @@ html, body, .splash
 	height: 100%
 	position: relative
 	display: block
+	.splashbg
+		width: 100%
+		height: 100%
+		background-size: cover
+		background-image: url("/img/F04.jpg")
+		background-repeat: no-repeat
+		background-position: 50% 50%
 .logo
 	width: 550px
 	height: 251px
 	display: block
 	background-image: url("/img/logo.png")
 	background-repeat: no-repeat
-	opacity: 0.5
+	opacity: 1
 
 .center-cont
 	width: 550px
@@ -54,7 +70,59 @@ html, body, .splash
 		a.in
 			background-image: url("/img/in.png")
 			margin-right: 0
+	
+	.newsletter-cont
+		width: 95px
+		display: block
+		height: 34px
+		margin: auto
+		-webkit-transition: width 0.3s ease-in-out
+		-moz-transition: width 0.3s ease-in-out
+		-ms-transition: width 0.3s ease-in-out
+		transition: width 0.3s ease-in-out
 
+		.email
+			float: left
+			display: block
+			color: #fff
+			width: 0
+			height: 34px
+			text-align: center
+			border: none
+			background-color: #000
+			-webkit-transition: width 0.3s ease-in-out
+			-moz-transition: width 0.3s ease-in-out
+			-ms-transition: width 0.3s ease-in-out
+			transition: width 0.3s ease-in-out
+		&.show
+			width: 225px
+			-webkit-transition: width 0.3s ease-in-out
+			-moz-transition: width 0.3s ease-in-out
+			-ms-transition: width 0.3s ease-in-out
+			transition: width 0.3s ease-in-out
+			.email
+				-webkit-transition: width 0.4s ease-in-out
+				-moz-transition: width 0.4s ease-in-out
+				-ms-transition: width 0.4s ease-in-out
+				transition: width 0.4s ease-in-out
+				width: 128px
+		.newsbtn
+			margin-left: 15px
+			float: left
+			height: 16px
+			width: 66px
+			display: block
+			background-color: #000
+			color: #fff
+			padding: 7px
+			text-align: center
+			cursor: pointer
+			padding-bottom: 11px
+			+noselect
+
+			p
+				padding: 0
+				margin: 0
 
 			
 
