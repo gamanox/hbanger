@@ -7,12 +7,26 @@ html, body, .splash {
   overflow: hidden; }
 
 @media -sass-debug-info{filename{}line{font-family:\0000318}}
+#rotardispisitivo {
+  background-image: url("/img/rotate.png");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: none;
+  background-color: #000; }
+
+@media -sass-debug-info{filename{}line{font-family:\0000331}}
 .video {
   width: 100%;
   height: 100%;
   position: relative;
   display: block; }
-@media -sass-debug-info{filename{}line{font-family:\0000319}}
+@media -sass-debug-info{filename{}line{font-family:\0000332}}
   .video .dot {
     background-image: url("/img/dot.png");
     width: 100%;
@@ -20,7 +34,7 @@ html, body, .splash {
     position: absolute;
     top: 0;
     left: 0; }
-@media -sass-debug-info{filename{}line{font-family:\0000330}}
+@media -sass-debug-info{filename{}line{font-family:\0000343}}
   .video .splashbg {
     width: 100%;
     height: 100%;
@@ -29,7 +43,7 @@ html, body, .splash {
     background-repeat: no-repeat;
     background-position: 50% 50%; }
 
-@media -sass-debug-info{filename{}line{font-family:\0000339}}
+@media -sass-debug-info{filename{}line{font-family:\0000352}}
 .center-cont {
   width: 550px;
   height: 415px;
@@ -39,7 +53,7 @@ html, body, .splash {
   right: 0;
   bottom: 0;
   margin: auto; }
-@media -sass-debug-info{filename{}line{font-family:\0000349}}
+@media -sass-debug-info{filename{}line{font-family:\0000362}}
   .center-cont .logo {
     width: 550px;
     height: 251px;
@@ -47,7 +61,7 @@ html, body, .splash {
     background-image: url("/img/logo.png");
     background-repeat: no-repeat;
     opacity: 1; }
-@media -sass-debug-info{filename{}line{font-family:\0000360}}
+@media -sass-debug-info{filename{}line{font-family:\0000373}}
   .center-cont .social {
     width: 130px;
     height: auto;
@@ -55,7 +69,7 @@ html, body, .splash {
     margin-left: auto;
     margin-right: auto;
     margin-top: 60px; }
-@media -sass-debug-info{filename{}line{font-family:\0000367}}
+@media -sass-debug-info{filename{}line{font-family:\0000380}}
     .center-cont .social a {
       margin-right: 20px;
       width: 48px;
@@ -69,50 +83,50 @@ html, body, .splash {
       width: 20px;
       height: 20px;
       padding: 5px; }
-@media -sass-debug-info{filename{}line{font-family:\0000380}}
+@media -sass-debug-info{filename{}line{font-family:\0000393}}
     .center-cont .social a.fb {
       background-image: url("/img/fb.png"); }
-@media -sass-debug-info{filename{}line{font-family:\0000382}}
+@media -sass-debug-info{filename{}line{font-family:\0000395}}
     .center-cont .social a.tw {
       background-image: url("/img/tw.png"); }
-@media -sass-debug-info{filename{}line{font-family:\0000384}}
+@media -sass-debug-info{filename{}line{font-family:\0000397}}
     .center-cont .social a.in {
       background-image: url("/img/in.png");
       margin-right: 0; }
-@media -sass-debug-info{filename{}line{font-family:\0000388}}
+@media -sass-debug-info{filename{}line{font-family:\00003101}}
   .center-cont .newsletter-cont {
-    width: 90px;
+    width: 106px;
     display: block;
-    height: 36px;
+    height: 40px;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 30px;
     -webkit-transition: width 0.3s ease-in-out;
     -moz-transition: width 0.3s ease-in-out;
     -ms-transition: width 0.3s ease-in-out;
     transition: width 0.3s ease-in-out; }
-@media -sass-debug-info{filename{}line{font-family:\0000399}}
+@media -sass-debug-info{filename{}line{font-family:\00003112}}
     .center-cont .newsletter-cont .email {
       float: left;
       display: block;
       color: #fff;
       width: 0;
-      height: 34px;
+      height: 38px;
       text-align: center;
-      border: none;
+      border: 0px;
       background-color: #000;
       margin-right: 0;
       -webkit-transition: all 0.3s ease-in-out;
       -moz-transition: all 0.3s ease-in-out;
       -ms-transition: all 0.3s ease-in-out;
       transition: all 0.3s ease-in-out; }
-@media -sass-debug-info{filename{}line{font-family:\00003113}}
+@media -sass-debug-info{filename{}line{font-family:\00003126}}
     .center-cont .newsletter-cont.show {
-      width: 232px;
+      width: 248px;
       -webkit-transition: width 0.3s ease-in-out;
       -moz-transition: width 0.3s ease-in-out;
       -ms-transition: width 0.3s ease-in-out;
       transition: width 0.3s ease-in-out; }
-@media -sass-debug-info{filename{}line{font-family:\00003119}}
+@media -sass-debug-info{filename{}line{font-family:\00003132}}
       .center-cont .newsletter-cont.show .email {
         border: 1px dotted #C3C3C3;
         margin-right: 10px;
@@ -121,36 +135,43 @@ html, body, .splash {
         -ms-transition: all 0.4s ease-in-out;
         transition: all 0.4s ease-in-out;
         width: 128px; }
-@media -sass-debug-info{filename{}line{font-family:\00003128}}
+@media -sass-debug-info{filename{}line{font-family:\00003141}}
     .center-cont .newsletter-cont .newsbtn {
       float: left;
-      height: 18px;
+      height: 20px;
       width: 76px;
       display: block;
       background-color: #000;
       color: #fff;
-      padding: 7px;
+      padding: 11px;
       text-align: center;
       cursor: pointer;
       padding-bottom: 11px;
+      padding-top: 9px;
+      padding-right: 15px;
+      padding-left: 15px;
       -webkit-touch-callout: none;
       -webkit-user-select: none;
       -khtml-user-select: none;
       -moz-user-select: none;
       -ms-user-select: none;
       user-select: none; }
-@media -sass-debug-info{filename{}line{font-family:\00003141}}
+@media -sass-debug-info{filename{}line{font-family:\00003158}}
       .center-cont .newsletter-cont .newsbtn p {
+        font-size: 16px;
+        font-family: "Times New Roman";
         padding: 0;
-        margin: 0; }
+        margin: 0;
+        height: 18px;
+        width: 78px; }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 760px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/gamanox\/sites\/hbanger\/ngapp\/app\/styles\/_mobile\.sass}line{font-family:\000033}}
   .video .splashbg {
     background-image: url("/img/F06.jpg");
     background-position: 100% 50%; } }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 760px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/gamanox\/sites\/hbanger\/ngapp\/app\/styles\/_mobile\.sass}line{font-family:\000038}}
   .center-cont {
     width: 300px;
@@ -164,10 +185,10 @@ html, body, .splash {
       background-size: contain; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/gamanox\/sites\/hbanger\/ngapp\/app\/styles\/_mobile\.sass}line{font-family:\0000319}}
     .center-cont .social {
-      width: 110px; }
+      width: 130px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/gamanox\/sites\/hbanger\/ngapp\/app\/styles\/_mobile\.sass}line{font-family:\0000321}}
       .center-cont .social a {
-        margin-right: 10px; }
+        margin-right: 20px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/gamanox\/sites\/hbanger\/ngapp\/app\/styles\/_mobile\.sass}line{font-family:\0000323}}
       .center-cont .social a.in {
         margin-right: 0; } }

@@ -14,6 +14,19 @@
 # )
 
 
+
+
+supportsOrientationChange = "onorientationchange" of window
+orientationEvent = (if supportsOrientationChange then "orientationchange" else "resize")
+window.addEventListener orientationEvent, (->
+  if window.orientation is 0
+    $('#rotardispisitivo').css
+      display: 'none'
+  else if window.orientation is 90
+    $('#rotardispisitivo').css
+      display: 'block'
+  return
+), false
 resize = ->
   ratio = undefined
   wH = undefined
@@ -55,8 +68,34 @@ resize = ->
       marginTop: (wH / 2) * -1 + "px"
 
 $ ->
-
-  $('.newsbtn').on 'click', ->
+  
+  
+  sendNewsletter = ->
+    $('.newsbtn p').html 'Thanks'
+  error = (response, status, xhr) ->
+    alert "error"
+    return
+  $('.showSubscribe').on 'click', ->
+    $('.newsbtn').removeClass 'showSubscribe'
+    $('.newsbtn').addClass 'sendformBtn'
     $('.newsletter-cont').addClass 'show'
     $('.newsbtn p').html 'subscribe'
+    $('.sendformBtn').on 'click', ->
+      $('.newsletter-cont').removeClass 'show'
+      $('.newsbtn p').html 'Sending'
+      $.post('http://www.mynewsletterbuilder.com/tools/ext_subscribe', $('#subscribe').serialize())
+      
+      $('.newsbtn p').html 'Thanks'
+          
+        
+
   #resize()
+
+  if navigator.userAgent.match(/iPad/i)
+    $("#viewport").attr "content", "width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0"
+    if window.orientation is 0
+      $('#rotardispisitivo').css
+        display: 'block'
+    else if window.orientation is 90
+      $('#rotardispisitivo').css
+        display: 'block'

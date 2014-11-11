@@ -15,6 +15,19 @@ html, body, .splash
 	width: 100%
 	height: 100%
 	overflow: hidden
+#rotardispisitivo
+	background-image: url("/img/rotate.png")
+	background-position: 50% 50%
+	background-repeat: no-repeat
+	width: 100%
+	height: 100%
+	position: absolute
+	top: 0
+	left: 0
+	z-index: 100
+	display: none
+	background-color: #000
+
 .video
 	.dot
 		background-image: url("/img/dot.png")
@@ -86,11 +99,11 @@ html, body, .splash
 			margin-right: 0
 	
 	.newsletter-cont
-		width: 90px
+		width: 106px
 		display: block
-		height: 36px
+		height: 40px
 		margin: auto
-		margin-top: 20px
+		margin-top: 30px
 		-webkit-transition: width 0.3s ease-in-out
 		-moz-transition: width 0.3s ease-in-out
 		-ms-transition: width 0.3s ease-in-out
@@ -101,9 +114,9 @@ html, body, .splash
 			display: block
 			color: #fff
 			width: 0
-			height: 34px
+			height: 38px
 			text-align: center
-			border: none
+			border: 0px
 			background-color: #000
 			margin-right: 0
 			-webkit-transition: all 0.3s ease-in-out
@@ -111,7 +124,7 @@ html, body, .splash
 			-ms-transition: all 0.3s ease-in-out
 			transition: all 0.3s ease-in-out
 		&.show
-			width: 232px
+			width: 248px
 			-webkit-transition: width 0.3s ease-in-out
 			-moz-transition: width 0.3s ease-in-out
 			-ms-transition: width 0.3s ease-in-out
@@ -127,20 +140,28 @@ html, body, .splash
 				width: 128px
 		.newsbtn
 			float: left
-			height: 18px
+			height: 20px
 			width: 76px
 			display: block
 			background-color: #000
 			color: #fff
-			padding: 7px
+			padding: 11px
 			text-align: center
 			cursor: pointer
 			padding-bottom: 11px
-			+noselect
+			padding-top: 9px
+			padding-right: 15px
+			padding-left: 15px
 
+			+noselect
+			
 			p
+				font-size: 16px
+				font-family: "Times New Roman"
 				padding: 0
 				margin: 0
+				height: 18px
+				width: 78px
 
 @import "mobile"
 

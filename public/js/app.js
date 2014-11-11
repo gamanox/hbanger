@@ -1,4 +1,20 @@
-var resize;
+var orientationEvent, resize, supportsOrientationChange;
+
+supportsOrientationChange = "onorientationchange" in window;
+
+orientationEvent = (supportsOrientationChange ? "orientationchange" : "resize");
+
+window.addEventListener(orientationEvent, (function() {
+  if (window.orientation === 0) {
+    $('#rotardispisitivo').css({
+      display: 'none'
+    });
+  } else if (window.orientation === 90) {
+    $('#rotardispisitivo').css({
+      display: 'block'
+    });
+  }
+}), false);
 
 resize = function() {
   var aspect, ratio, vidH, wH, wW;
@@ -46,10 +62,37 @@ resize = function() {
 };
 
 $(function() {
-  return $('.newsbtn').on('click', function() {
+  var error, sendNewsletter;
+  sendNewsletter = function() {
+    return $('.newsbtn p').html('Thanks');
+  };
+  error = function(response, status, xhr) {
+    alert("error");
+  };
+  $('.showSubscribe').on('click', function() {
+    $('.newsbtn').removeClass('showSubscribe');
+    $('.newsbtn').addClass('sendformBtn');
     $('.newsletter-cont').addClass('show');
-    return $('.newsbtn p').html('subscribe');
+    $('.newsbtn p').html('subscribe');
+    return $('.sendformBtn').on('click', function() {
+      $('.newsletter-cont').removeClass('show');
+      $('.newsbtn p').html('Sending');
+      $.post('http://www.mynewsletterbuilder.com/tools/ext_subscribe', $('#subscribe').serialize());
+      return $('.newsbtn p').html('Thanks');
+    });
   });
+  if (navigator.userAgent.match(/iPad/i)) {
+    $("#viewport").attr("content", "width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0");
+    if (window.orientation === 0) {
+      return $('#rotardispisitivo').css({
+        display: 'block'
+      });
+    } else if (window.orientation === 90) {
+      return $('#rotardispisitivo').css({
+        display: 'block'
+      });
+    }
+  }
 });
 
 var MainController;
