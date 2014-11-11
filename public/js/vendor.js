@@ -12647,9 +12647,9 @@ function import$(obj, src){
 }();
 (function() {
   var WebSocket = window.WebSocket || window.MozWebSocket;
-  var br = window.brunch || {};
-  var ar = br['auto-reload'] || {};
-  if (!WebSocket || !ar.enabled) return;
+  var br = window.brunch = (window.brunch || {});
+  var ar = br['auto-reload'] = (br['auto-reload'] || {});
+  if (!WebSocket || ar.disabled) return;
 
   var cacheBuster = function(url){
     var date = Math.round(Date.now() / 1000).toString();
@@ -12671,21 +12671,34 @@ function import$(obj, src){
         .forEach(function(link) {
           link.href = cacheBuster(link.href);
         });
+
+      // hack to force page repaint
+      var el = document.body;
+      var bodyDisplay = el.style.display || 'block';
+      el.style.display = 'none';
+      el.offsetHeight;
+      el.style.display = bodyDisplay;
     }
   };
   var port = ar.port || 9485;
-  var host = (!br['server']) ? window.location.hostname : br['server'];
-  var connection = new WebSocket('ws://' + host + ':' + port);
-  connection.onmessage = function(event) {
-    var message = event.data;
-    var b = window.brunch;
-    if (!b || !b['auto-reload'] || !b['auto-reload'].enabled) return;
-    if (reloaders[message] != null) {
-      reloaders[message]();
-    } else {
-      reloaders.page();
-    }
+  var host = br.server || window.location.hostname;
+
+  var connect = function(){
+    var connection = new WebSocket('ws://' + host + ':' + port);
+    connection.onmessage = function(event){
+      if (ar.disabled) return;
+      var message = event.data;
+      var reloader = reloaders[message] || reloaders.page;
+      reloader();
+    };
+    connection.onerror = function(){
+      if (connection.readyState) connection.close();
+    };
+    connection.onclose = function(){
+      window.setTimeout(connect, 1000);
+    };
   };
+  connect();
 })();
 
 

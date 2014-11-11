@@ -1,4 +1,6 @@
 
+=mobile
+	@media screen and (max-width: $break-small)
 =noselect
 	-webkit-touch-callout: none
 	-webkit-user-select: none
@@ -32,13 +34,7 @@ html, body, .splash
 		background-image: url("/img/F04.jpg")
 		background-repeat: no-repeat
 		background-position: 50% 50%
-.logo
-	width: 550px
-	height: 251px
-	display: block
-	background-image: url("/img/logo.png")
-	background-repeat: no-repeat
-	opacity: 1
+
 
 .center-cont
 	width: 550px
@@ -49,9 +45,20 @@ html, body, .splash
 	right: 0
 	bottom: 0
 	margin: auto
+	
+	.logo
+		width: 550px
+		height: 251px
+		display: block
+		background-image: url("/img/logo.png")
+		background-repeat: no-repeat
+		opacity: 1
+		
+		
+
 
 	.social
-		width: 184px
+		width: 130px
 		height: auto
 		overflow: auto
 		margin-left: auto
@@ -63,6 +70,13 @@ html, body, .splash
 			height: 48px
 			display: block
 			float: left
+			background-position: 50% 50%
+			border-radius: 50%
+			border-color: #C3C3C3
+			background-color: #C3C3C3
+			width: 20px
+			height: 20px
+			padding: 5px
 		a.fb
 			background-image: url("/img/fb.png")
 		a.tw
@@ -72,9 +86,9 @@ html, body, .splash
 			margin-right: 0
 	
 	.newsletter-cont
-		width: 95px
+		width: 90px
 		display: block
-		height: 34px
+		height: 36px
 		margin: auto
 		margin-top: 20px
 		-webkit-transition: width 0.3s ease-in-out
@@ -91,27 +105,30 @@ html, body, .splash
 			text-align: center
 			border: none
 			background-color: #000
-			-webkit-transition: width 0.3s ease-in-out
-			-moz-transition: width 0.3s ease-in-out
-			-ms-transition: width 0.3s ease-in-out
-			transition: width 0.3s ease-in-out
+			margin-right: 0
+			-webkit-transition: all 0.3s ease-in-out
+			-moz-transition: all 0.3s ease-in-out
+			-ms-transition: all 0.3s ease-in-out
+			transition: all 0.3s ease-in-out
 		&.show
-			width: 225px
+			width: 232px
 			-webkit-transition: width 0.3s ease-in-out
 			-moz-transition: width 0.3s ease-in-out
 			-ms-transition: width 0.3s ease-in-out
 			transition: width 0.3s ease-in-out
 			.email
-				-webkit-transition: width 0.4s ease-in-out
-				-moz-transition: width 0.4s ease-in-out
-				-ms-transition: width 0.4s ease-in-out
-				transition: width 0.4s ease-in-out
+				border: 1px dotted #C3C3C3
+
+				margin-right: 10px
+				-webkit-transition: all 0.4s ease-in-out
+				-moz-transition: all 0.4s ease-in-out
+				-ms-transition: all 0.4s ease-in-out
+				transition: all 0.4s ease-in-out
 				width: 128px
 		.newsbtn
-			margin-left: 15px
 			float: left
-			height: 16px
-			width: 66px
+			height: 18px
+			width: 76px
 			display: block
 			background-color: #000
 			color: #fff
@@ -125,7 +142,7 @@ html, body, .splash
 				padding: 0
 				margin: 0
 
-			
+@import "mobile"
 
 
 	

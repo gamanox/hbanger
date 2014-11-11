@@ -24,8 +24,9 @@
         "LiveScript-brunch": ">= 1.0 < 1.5",
         "coffee-script-brunch": "=> 1.0 < 1.5",
         "coffeelint-brunch": ">= 1.0 < 1.5",
-
-        "auto-reload-brunch": ">= 1.3 < 1.5",
+        "chokidar": "*",
+        "async": "*",
+        "auto-reload-brunch": "1.7.5",
 
 	"css-brunch": ">= 1.0 < 1.5",
 	"sass-brunch": ">= 1.0 < 1.5",
