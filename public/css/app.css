@@ -41,7 +41,7 @@ html, body, .splash {
 @media -sass-debug-info{filename{}line{font-family:\0000343}}
 .center-cont {
   width: 550px;
-  height: 320px;
+  height: 415px;
   position: absolute;
   top: 0;
   left: 0;
@@ -79,11 +79,12 @@ html, body, .splash {
     display: block;
     height: 34px;
     margin: auto;
+    margin-top: 20px;
     -webkit-transition: width 0.3s ease-in-out;
     -moz-transition: width 0.3s ease-in-out;
     -ms-transition: width 0.3s ease-in-out;
     transition: width 0.3s ease-in-out; }
-@media -sass-debug-info{filename{}line{font-family:\0000384}}
+@media -sass-debug-info{filename{}line{font-family:\0000385}}
     .center-cont .newsletter-cont .email {
       float: left;
       display: block;
@@ -97,21 +98,21 @@ html, body, .splash {
       -moz-transition: width 0.3s ease-in-out;
       -ms-transition: width 0.3s ease-in-out;
       transition: width 0.3s ease-in-out; }
-@media -sass-debug-info{filename{}line{font-family:\0000397}}
+@media -sass-debug-info{filename{}line{font-family:\0000398}}
     .center-cont .newsletter-cont.show {
       width: 225px;
       -webkit-transition: width 0.3s ease-in-out;
       -moz-transition: width 0.3s ease-in-out;
       -ms-transition: width 0.3s ease-in-out;
       transition: width 0.3s ease-in-out; }
-@media -sass-debug-info{filename{}line{font-family:\00003103}}
+@media -sass-debug-info{filename{}line{font-family:\00003104}}
       .center-cont .newsletter-cont.show .email {
         -webkit-transition: width 0.4s ease-in-out;
         -moz-transition: width 0.4s ease-in-out;
         -ms-transition: width 0.4s ease-in-out;
         transition: width 0.4s ease-in-out;
         width: 128px; }
-@media -sass-debug-info{filename{}line{font-family:\00003109}}
+@media -sass-debug-info{filename{}line{font-family:\00003110}}
     .center-cont .newsletter-cont .newsbtn {
       margin-left: 15px;
       float: left;
@@ -130,7 +131,7 @@ html, body, .splash {
       -moz-user-select: none;
       -ms-user-select: none;
       user-select: none; }
-@media -sass-debug-info{filename{}line{font-family:\00003123}}
+@media -sass-debug-info{filename{}line{font-family:\00003124}}
       .center-cont .newsletter-cont .newsbtn p {
         padding: 0;
         margin: 0; }
