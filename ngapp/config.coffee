@@ -57,9 +57,9 @@ exports.config =
       pretty: yes
     coffeescript:
       bare: true
-    autoReload:
-          enabled:
-            css: on
-            js: on
-            assets: on
-          delay: 200
+    # autoReload:
+    #       enabled:
+    #         css: on
+    #         js: on
+    #         assets: on
+    #       delay: 200

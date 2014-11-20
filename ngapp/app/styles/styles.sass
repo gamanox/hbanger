@@ -8,7 +8,11 @@
 	-moz-user-select: none
 	-ms-user-select: none
 	user-select: none
-
+input, input[type="password"], input[type="search"], input[type="range"], textarea
+	border: 0px none #fff
+	-webkit-appearance: none
+	padding: 0
+	margin: 0
 html, body, .splash
 	margin: 0
 	padding: 0
@@ -27,6 +31,22 @@ html, body, .splash
 	z-index: 100
 	display: none
 	background-color: #000
+#footer
+	width: 100%
+	height: 35px
+	position: fixed
+	bottom: 0
+	left: 0
+	.madero
+		position: absolute
+		left: 15px
+		bottom: 15px
+	.wss
+		position: absolute
+		right: 15px
+		bottom: 10px
+
+
 
 .video
 	.dot
@@ -109,15 +129,16 @@ html, body, .splash
 		-ms-transition: width 0.3s ease-in-out
 		transition: width 0.3s ease-in-out
 
-		.email
+		input.email
 			float: left
 			display: block
 			color: #fff
 			width: 0
 			height: 38px
 			text-align: center
-			border: 0px
-			border-radius: 0px
+			border: none !important
+			-webkit-focus-ring-color: none
+			border-radius: 0
 			-webkit-appearance: none
 			background-color: #000
 			margin-right: 0
@@ -131,7 +152,7 @@ html, body, .splash
 			-moz-transition: width 0.3s ease-in-out
 			-ms-transition: width 0.3s ease-in-out
 			transition: width 0.3s ease-in-out
-			.email
+			input.email
 				border: 1px dotted #C3C3C3
 
 				margin-right: 10px

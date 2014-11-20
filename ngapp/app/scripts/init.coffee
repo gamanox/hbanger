@@ -12,7 +12,16 @@
 #       return
 #   ]
 # )
-
+validateEmail = ($email) ->
+  emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/
+  unless emailReg.test($email)
+    false
+  else
+    true
+pageView = (page) ->
+  
+  # console.log('analytics: ' + page);
+  ga "send", "pageview", "/" + page
 
 
 
@@ -81,11 +90,36 @@ $ ->
     $('.newsletter-cont').addClass 'show'
     $('.newsbtn p').html 'subscribe'
     $('.sendformBtn').on 'click', ->
-      $('.newsletter-cont').removeClass 'show'
       $('.newsbtn p').html 'Sending'
-      $.post('http://www.mynewsletterbuilder.com/tools/ext_subscribe', $('#subscribe').serialize())
-      
-      $('.newsbtn p').html 'Thanks'
+      emailaddress = $('.email').val()
+      if !validateEmail(emailaddress)
+        $('.email').val ''
+        $('.email').attr
+          placeholder: 'wrong email'
+        $('.newsbtn p').html 'subscribe'
+        
+      else
+        #$.post('http://api.mynewsletterbuilder.com/1.0.2/Subscribe/json/?api_key=aaddbdd8202a5128b7f806aaf9047215&', $('#subscribe').serialize())
+        email = $('.email').val()
+        url="http://api.mynewsletterbuilder.com/1.0.2/Subscribe/json/?api_key=aaddbdd8202a5128b7f806aaf9047215&lists=436693&details[email]="+email
+        console.log url
+        $.ajax
+          url: url
+          type: "POST"
+          crossDomain: true
+          #dataType: "JSONP"
+
+        #$.post('http://www.mynewsletterbuilder.com/tools/ext_subscribe', $('#subscribe').serialize())
+        #$("#subscribe").submit();
+        $('.newsletter-cont').removeClass 'show'
+        
+        $('.newsbtn p').html 'Thanks'
+        pageView 'newsletter/sign_up'
+        setTimeout ->
+          $('.newsbtn').removeClass 'sendformBtn'
+          $('.newsbtn').addClass 'showSubscribe'
+        , 2000
+
           
         
 
@@ -95,7 +129,7 @@ $ ->
     $("#viewport").attr "content", "width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0"
     if window.orientation is 0
       $('#rotardispisitivo').css
-        display: 'block'
+        display: 'none'
     else if window.orientation is 90
       $('#rotardispisitivo').css
-        display: 'block'
+        display: 'none'

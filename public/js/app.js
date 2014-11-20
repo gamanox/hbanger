@@ -1,4 +1,18 @@
-var orientationEvent, resize, supportsOrientationChange;
+var orientationEvent, pageView, resize, supportsOrientationChange, validateEmail;
+
+validateEmail = function($email) {
+  var emailReg;
+  emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+  if (!emailReg.test($email)) {
+    return false;
+  } else {
+    return true;
+  }
+};
+
+pageView = function(page) {
+  return ga("send", "pageview", "/" + page);
+};
 
 supportsOrientationChange = "onorientationchange" in window;
 
@@ -75,21 +89,44 @@ $(function() {
     $('.newsletter-cont').addClass('show');
     $('.newsbtn p').html('subscribe');
     return $('.sendformBtn').on('click', function() {
-      $('.newsletter-cont').removeClass('show');
+      var email, emailaddress, url;
       $('.newsbtn p').html('Sending');
-      $.post('http://www.mynewsletterbuilder.com/tools/ext_subscribe', $('#subscribe').serialize());
-      return $('.newsbtn p').html('Thanks');
+      emailaddress = $('.email').val();
+      if (!validateEmail(emailaddress)) {
+        $('.email').val('');
+        $('.email').attr({
+          placeholder: 'wrong email'
+        });
+        return $('.newsbtn p').html('subscribe');
+      } else {
+        email = $('.email').val();
+        url = "http://api.mynewsletterbuilder.com/1.0.2/Subscribe/json/?api_key=aaddbdd8202a5128b7f806aaf9047215&lists=436693&details[email]=" + email;
+        console.log(url);
+        $.ajax({
+          url: url,
+          type: "POST",
+          crossDomain: true,
+          dataType: "JSONP"
+        });
+        $('.newsletter-cont').removeClass('show');
+        $('.newsbtn p').html('Thanks');
+        pageView('newsletter/sign_up');
+        return setTimeout(function() {
+          $('.newsbtn').removeClass('sendformBtn');
+          return $('.newsbtn').addClass('showSubscribe');
+        }, 2000);
+      }
     });
   });
   if (navigator.userAgent.match(/iPad/i)) {
     $("#viewport").attr("content", "width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0");
     if (window.orientation === 0) {
       return $('#rotardispisitivo').css({
-        display: 'block'
+        display: 'none'
       });
     } else if (window.orientation === 90) {
       return $('#rotardispisitivo').css({
-        display: 'block'
+        display: 'none'
       });
     }
   }

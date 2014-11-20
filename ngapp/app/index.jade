@@ -4,13 +4,30 @@ html
 		meta(charset='utf-8' )
 		meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
 		meta(id="viewport", content="width=device-width, maximum-scale=1.0, initial-scale=1.0", name="viewport")
-		title Heedbanger - Style Supremacy
+		title Hedbanger - Style Supremacy
+		
 
-		link(rel='favicon.ico', href='favicon.ico')
+		meta(name='twitter:card', content='summary')
+		meta(name='twitter:site', content='@HedbangerBarber')
+		meta#twtitle(name='twitter:title', content='Hedbanger / Style Supremacy')
+		meta#twdescription(name='twitter:description', content='Barbershop & Whisky Bar.')
+		meta#twimage(name='twitter:image', content='http://hedbanger.com/hb.png')
+
+		meta(property='og:title', content='Hedbanger / Style Supremacy')
+		meta(property='og:type', content='article')
+		meta(property='og:url', content='http://hedbanger.com/')
+		meta(property='og:image', content='http://hedbanger.com/hb.png?t=12345?')
+		meta(property='og:description', content='Barbershop & Whisky Bar.')
+		meta(property='og:site_name', content='Hedbanger / Style Supremacy')
+
+
+
+		link(rel="icon", type="image/png", href="http://hedbanger.com/favicon.png")
+		//- link(rel='favicon.ico', href='favicon.ico')
 		link(rel='stylesheet', href='/css/app.css')
-		script.
-			window.brunch = window.brunch || {};
-			window.brunch['auto-reload'] = {enabled: true};
+		//- script.
+		//- 	window.brunch = window.brunch || {};
+		//- 	window.brunch['auto-reload'] = {enabled: true};
 		script(src='/js/vendor.js')
 		script(src='/js/app.js')
 	body
@@ -46,5 +63,9 @@ html
 						.newsbtn.showSubscribe
 							p newsletter
 		#rotardispisitivo
-
+		#footer
+			a.madero(href="http://madero.co/", target="_blank")
+				img(src="/img/madero.png", alt="")
+			a.wss(href="http://wesawsatan.com/", target="_blank")
+				img(src="/img/wss.png", alt="")
 
