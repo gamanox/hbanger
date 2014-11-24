@@ -1,4 +1,4 @@
-
+@import "fonts"
 =mobile
 	@media screen and (max-width: $break-small)
 =noselect
@@ -18,7 +18,7 @@ html, body, .splash
 	padding: 0
 	width: 100%
 	height: 100%
-	overflow: hidden
+	// overflow: hidden
 #rotardispisitivo
 	background-image: url("/img/rotate.png")
 	background-position: 50% 50%
@@ -34,17 +34,34 @@ html, body, .splash
 #footer
 	width: 100%
 	height: 35px
-	position: fixed
-	bottom: 0
-	left: 0
+	// position: fixed
+	// bottom: 0
+	// left: 0
+	background-color: #000
+	p.created
+		padding: 0
+		margin: 0
+		text-align: center
+		background-color: #000
+		+sslight
+		color: #fff
+		font-size: 11px
+		padding-top: 12px
+		padding-bottom: 10px
+		width: 50%
+
+		margin-left: auto
+		margin-right: auto
 	.madero
 		position: absolute
 		left: 15px
 		bottom: 15px
+		display: none
 	.wss
 		position: absolute
 		right: 15px
 		bottom: 10px
+		display: none
 
 
 

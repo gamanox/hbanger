@@ -1,6 +1,8 @@
+@import url("http://fonts.googleapis.com/css?family=Roboto:900,500,300,700,400");
+@import url("http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700");
 @media -sass-debug-info{filename{}line{font-family:\0000311}}
 input, input[type="password"], input[type="search"], input[type="range"], textarea {
-  border: 0px none #fff;
+  border: 0px none white;
   -webkit-appearance: none;
   padding: 0;
   margin: 0; }
@@ -10,8 +12,7 @@ html, body, .splash {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
-  overflow: hidden; }
+  height: 100%; }
 
 @media -sass-debug-info{filename{}line{font-family:\0000322}}
 #rotardispisitivo {
@@ -25,33 +26,48 @@ html, body, .splash {
   left: 0;
   z-index: 100;
   display: none;
-  background-color: #000; }
+  background-color: black; }
 
 @media -sass-debug-info{filename{}line{font-family:\0000334}}
 #footer {
   width: 100%;
   height: 35px;
-  position: fixed;
-  bottom: 0;
-  left: 0; }
-@media -sass-debug-info{filename{}line{font-family:\0000340}}
+  background-color: black; }
+@media -sass-debug-info{filename{}line{font-family:\0000341}}
+  #footer p.created {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    background-color: black;
+    font-family: "Roboto";
+    font-weight: 300;
+    color: white;
+    font-size: 11px;
+    padding-top: 12px;
+    padding-bottom: 10px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto; }
+@media -sass-debug-info{filename{}line{font-family:\0000355}}
   #footer .madero {
     position: absolute;
     left: 15px;
-    bottom: 15px; }
-@media -sass-debug-info{filename{}line{font-family:\0000344}}
+    bottom: 15px;
+    display: none; }
+@media -sass-debug-info{filename{}line{font-family:\0000360}}
   #footer .wss {
     position: absolute;
     right: 15px;
-    bottom: 10px; }
+    bottom: 10px;
+    display: none; }
 
-@media -sass-debug-info{filename{}line{font-family:\0000351}}
+@media -sass-debug-info{filename{}line{font-family:\0000368}}
 .video {
   width: 100%;
   height: 100%;
   position: relative;
   display: block; }
-@media -sass-debug-info{filename{}line{font-family:\0000352}}
+@media -sass-debug-info{filename{}line{font-family:\0000369}}
   .video .dot {
     background-image: url("/img/dot.png");
     width: 100%;
@@ -59,7 +75,7 @@ html, body, .splash {
     position: absolute;
     top: 0;
     left: 0; }
-@media -sass-debug-info{filename{}line{font-family:\0000363}}
+@media -sass-debug-info{filename{}line{font-family:\0000380}}
   .video .splashbg {
     width: 100%;
     height: 100%;
@@ -68,7 +84,7 @@ html, body, .splash {
     background-repeat: no-repeat;
     background-position: 50% 50%; }
 
-@media -sass-debug-info{filename{}line{font-family:\0000372}}
+@media -sass-debug-info{filename{}line{font-family:\0000389}}
 .center-cont {
   width: 550px;
   height: 415px;
@@ -78,7 +94,7 @@ html, body, .splash {
   right: 0;
   bottom: 0;
   margin: auto; }
-@media -sass-debug-info{filename{}line{font-family:\0000382}}
+@media -sass-debug-info{filename{}line{font-family:\0000399}}
   .center-cont .logo {
     width: 550px;
     height: 251px;
@@ -86,7 +102,7 @@ html, body, .splash {
     background-image: url("/img/logo.png");
     background-repeat: no-repeat;
     opacity: 1; }
-@media -sass-debug-info{filename{}line{font-family:\0000393}}
+@media -sass-debug-info{filename{}line{font-family:\00003110}}
   .center-cont .social {
     width: 130px;
     height: auto;
@@ -94,7 +110,7 @@ html, body, .splash {
     margin-left: auto;
     margin-right: auto;
     margin-top: 60px; }
-@media -sass-debug-info{filename{}line{font-family:\00003100}}
+@media -sass-debug-info{filename{}line{font-family:\00003117}}
     .center-cont .social a {
       margin-right: 20px;
       width: 48px;
@@ -103,22 +119,22 @@ html, body, .splash {
       float: left;
       background-position: 50% 50%;
       border-radius: 50%;
-      border-color: #C3C3C3;
-      background-color: #C3C3C3;
+      border-color: #c3c3c3;
+      background-color: #c3c3c3;
       width: 20px;
       height: 20px;
       padding: 5px; }
-@media -sass-debug-info{filename{}line{font-family:\00003113}}
+@media -sass-debug-info{filename{}line{font-family:\00003130}}
     .center-cont .social a.fb {
       background-image: url("/img/fb.png"); }
-@media -sass-debug-info{filename{}line{font-family:\00003115}}
+@media -sass-debug-info{filename{}line{font-family:\00003132}}
     .center-cont .social a.tw {
       background-image: url("/img/tw.png"); }
-@media -sass-debug-info{filename{}line{font-family:\00003117}}
+@media -sass-debug-info{filename{}line{font-family:\00003134}}
     .center-cont .social a.in {
       background-image: url("/img/in.png");
       margin-right: 0; }
-@media -sass-debug-info{filename{}line{font-family:\00003121}}
+@media -sass-debug-info{filename{}line{font-family:\00003138}}
   .center-cont .newsletter-cont {
     width: 106px;
     display: block;
@@ -129,11 +145,11 @@ html, body, .splash {
     -moz-transition: width 0.3s ease-in-out;
     -ms-transition: width 0.3s ease-in-out;
     transition: width 0.3s ease-in-out; }
-@media -sass-debug-info{filename{}line{font-family:\00003132}}
+@media -sass-debug-info{filename{}line{font-family:\00003149}}
     .center-cont .newsletter-cont input.email {
       float: left;
       display: block;
-      color: #fff;
+      color: white;
       width: 0;
       height: 38px;
       text-align: center;
@@ -141,36 +157,36 @@ html, body, .splash {
       -webkit-focus-ring-color: none;
       border-radius: 0;
       -webkit-appearance: none;
-      background-color: #000;
+      background-color: black;
       margin-right: 0;
       -webkit-transition: all 0.3s ease-in-out;
       -moz-transition: all 0.3s ease-in-out;
       -ms-transition: all 0.3s ease-in-out;
       transition: all 0.3s ease-in-out; }
-@media -sass-debug-info{filename{}line{font-family:\00003149}}
+@media -sass-debug-info{filename{}line{font-family:\00003166}}
     .center-cont .newsletter-cont.show {
       width: 248px;
       -webkit-transition: width 0.3s ease-in-out;
       -moz-transition: width 0.3s ease-in-out;
       -ms-transition: width 0.3s ease-in-out;
       transition: width 0.3s ease-in-out; }
-@media -sass-debug-info{filename{}line{font-family:\00003155}}
+@media -sass-debug-info{filename{}line{font-family:\00003172}}
       .center-cont .newsletter-cont.show input.email {
-        border: 1px dotted #C3C3C3;
+        border: 1px dotted #c3c3c3;
         margin-right: 10px;
         -webkit-transition: all 0.4s ease-in-out;
         -moz-transition: all 0.4s ease-in-out;
         -ms-transition: all 0.4s ease-in-out;
         transition: all 0.4s ease-in-out;
         width: 128px; }
-@media -sass-debug-info{filename{}line{font-family:\00003164}}
+@media -sass-debug-info{filename{}line{font-family:\00003181}}
     .center-cont .newsletter-cont .newsbtn {
       float: left;
       height: 20px;
       width: 76px;
       display: block;
-      background-color: #000;
-      color: #fff;
+      background-color: black;
+      color: white;
       padding: 11px;
       text-align: center;
       cursor: pointer;
@@ -184,7 +200,7 @@ html, body, .splash {
       -moz-user-select: none;
       -ms-user-select: none;
       user-select: none; }
-@media -sass-debug-info{filename{}line{font-family:\00003181}}
+@media -sass-debug-info{filename{}line{font-family:\00003198}}
       .center-cont .newsletter-cont .newsbtn p {
         font-size: 16px;
         font-family: "Times New Roman";

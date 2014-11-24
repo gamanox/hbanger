@@ -105,8 +105,7 @@ $(function() {
         $.ajax({
           url: url,
           type: "POST",
-          crossDomain: true,
-          dataType: "JSONP"
+          crossDomain: true
         });
         $('.newsletter-cont').removeClass('show');
         $('.newsbtn p').html('Thanks');
