@@ -366,12 +366,12 @@ html, body, .splash {
       background-size: contain; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/gamanox\/sites\/hbanger\/ngapp\/app\/styles\/_mobile\.sass}line{font-family:\0000319}}
     .center-cont .social {
-      width: 130px; }
+      width: 180px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/gamanox\/sites\/hbanger\/ngapp\/app\/styles\/_mobile\.sass}line{font-family:\0000321}}
       .center-cont .social a {
         margin-right: 20px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/gamanox\/sites\/hbanger\/ngapp\/app\/styles\/_mobile\.sass}line{font-family:\0000323}}
-      .center-cont .social a.in {
+      .center-cont .social a.tm {
         margin-right: 0; } }
 
 
