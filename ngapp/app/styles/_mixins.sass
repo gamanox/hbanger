@@ -1,0 +1,18 @@
+=transition($prop)
+	-webkit-transition: $prop
+	-moz-transition: $prop
+	-o-transition: $prop
+	-ms-transition: $prop
+	transition: $prop
+=transform($value)
+	-webkit-transform: $value 
+	-moz-transform: $value 
+	-o-transform: $value 
+	-ms-transform: $value 
+	transform: $value 
+=prefix($value, $arg)
+	-webkit-#{$value}: #{$arg}
+	-moz-#{$value}: #{$arg}
+	-o-#{$value}: #{$arg}
+	-ms-#{$value}: #{$arg}
+	#{$value}: #{$arg}

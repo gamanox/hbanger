@@ -78,7 +78,10 @@ resize = ->
 
 $ ->
   
-  
+  $('#footer .created').on 'click', ->
+    $('#created').addClass 'show'
+  $('#created .close').on 'click', ->
+    $('#created').removeClass 'show'
   sendNewsletter = ->
     $('.newsbtn p').html 'Thanks'
   error = (response, status, xhr) ->

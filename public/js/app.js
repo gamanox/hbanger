@@ -77,6 +77,12 @@ resize = function() {
 
 $(function() {
   var error, sendNewsletter;
+  $('#footer .created').on('click', function() {
+    return $('#created').addClass('show');
+  });
+  $('#created .close').on('click', function() {
+    return $('#created').removeClass('show');
+  });
   sendNewsletter = function() {
     return $('.newsbtn p').html('Thanks');
   };

@@ -1,4 +1,6 @@
 @import "fonts"
+@import "mixins"
+@import "easing"
 =mobile
 	@media screen and (max-width: $break-small)
 =noselect
@@ -18,6 +20,11 @@ html, body, .splash
 	padding: 0
 	width: 100%
 	height: 100%
+.splash
+	margin: 0
+	padding: 0
+	width: 100%
+	height: 100%
 	// overflow: hidden
 #rotardispisitivo
 	background-image: url("/img/rotate.png")
@@ -31,38 +38,93 @@ html, body, .splash
 	z-index: 100
 	display: none
 	background-color: #000
+
+#created
+	top: 0
+	left: 0
+	position: absolute
+	z-index: 10
+	opacity: 0
+	width: 100%
+	height: 100%
+	+transform(scale(0,0))
+	+transition(all 600ms $inout-expo)
+	+prefix(transform-origin, 50% 100%)
+	&.show
+		opacity: 1
+		+transform(scale(1,1))
+	.bg
+		width: 100%
+		height: 100%
+		top: 0
+		left: 0
+		position: absolute
+		background-color: #000
+		opacity: 0.90
+	.created-overlay
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		margin: auto
+		width: 50%
+		height: 50%
+		a
+			width: 50%
+			display: block
+			float: left
+			+transition(all 600ms ease)
+			&:hover
+				+prefix(transform, scale(1.1, 1.1))
+
+			img
+				width: 100%
+				height: auto
+	.close
+		width: 50px
+		height: 50px
+		position: absolute
+		right: 20px
+		top: 20px
+		+transition(all 600ms $inout-expo)
+		cursor: pointer
+		&:hover
+			+prefix(transform, rotateZ(180deg))
+
+
+
 #footer
 	width: 100%
-	height: 35px
-	// position: fixed
-	// bottom: 0
-	// left: 0
+	height: 52px
+	position: fixed
+	bottom: 0
+	left: 0
 	background-color: #000
 	p.created
+		+noselect
 		padding: 0
 		margin: 0
 		text-align: center
 		background-color: #000
 		+sslight
-		color: #fff
+		color: #c3c3c3
 		font-size: 11px
 		padding-top: 12px
 		padding-bottom: 10px
-		width: 50%
+		width: 100%
+		opacity: 0.7
+		+transition(opacity 0.4s ease-in-out)
+
+		span
+			+ssmedium
+		&:hover
+			opacity: 1
 
 		margin-left: auto
 		margin-right: auto
-	.madero
-		position: absolute
-		left: 15px
-		bottom: 15px
-		display: none
-	.wss
-		position: absolute
-		right: 15px
-		bottom: 10px
-		display: none
-
+		cursor: pointer
+	
 
 
 .video
@@ -108,7 +170,7 @@ html, body, .splash
 
 
 	.social
-		width: 130px
+		width: 180px
 		height: auto
 		overflow: auto
 		margin-left: auto
@@ -122,17 +184,24 @@ html, body, .splash
 			float: left
 			background-position: 50% 50%
 			border-radius: 50%
-			border-color: #C3C3C3
-			background-color: #C3C3C3
+			border-color: #fff
+			background-color: #fff
+			opacity: 0.7
 			width: 20px
 			height: 20px
 			padding: 5px
+			+transition(opacity 0.4s ease)
+			&:hover
+				opacity: 1
+
 		a.fb
 			background-image: url("/img/fb.png")
 		a.tw
 			background-image: url("/img/tw.png")
 		a.in
 			background-image: url("/img/in.png")
+		a.tm
+			background-image: url("/img/tm.png")
 			margin-right: 0
 	
 	.newsletter-cont
@@ -192,7 +261,11 @@ html, body, .splash
 			padding-top: 9px
 			padding-right: 15px
 			padding-left: 15px
+			&.showSubscribe, &.sendformBtn
 
+				+transition(all 600ms $inout-expo)
+				&:hover
+					+transform(scale(1.1, 1.1))
 			+noselect
 			
 			p

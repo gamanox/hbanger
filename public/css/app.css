@@ -1,20 +1,27 @@
 @import url("http://fonts.googleapis.com/css?family=Roboto:900,500,300,700,400");
 @import url("http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700");
-@media -sass-debug-info{filename{}line{font-family:\0000311}}
+@media -sass-debug-info{filename{}line{font-family:\0000313}}
 input, input[type="password"], input[type="search"], input[type="range"], textarea {
-  border: 0px none white;
+  border: 0px none #fff;
   -webkit-appearance: none;
   padding: 0;
   margin: 0; }
 
-@media -sass-debug-info{filename{}line{font-family:\0000316}}
+@media -sass-debug-info{filename{}line{font-family:\0000318}}
 html, body, .splash {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%; }
 
-@media -sass-debug-info{filename{}line{font-family:\0000322}}
+@media -sass-debug-info{filename{}line{font-family:\0000323}}
+.splash {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%; }
+
+@media -sass-debug-info{filename{}line{font-family:\0000329}}
 #rotardispisitivo {
   background-image: url("/img/rotate.png");
   background-position: 50% 50%;
@@ -26,48 +33,152 @@ html, body, .splash {
   left: 0;
   z-index: 100;
   display: none;
-  background-color: black; }
+  background-color: #000; }
 
-@media -sass-debug-info{filename{}line{font-family:\0000334}}
+@media -sass-debug-info{filename{}line{font-family:\0000342}}
+#created {
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 10;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: scale(0, 0);
+  -moz-transform: scale(0, 0);
+  -o-transform: scale(0, 0);
+  -ms-transform: scale(0, 0);
+  transform: scale(0, 0);
+  -webkit-transition: all 600ms cubic-bezier(1, 0, 0, 1);
+  -moz-transition: all 600ms cubic-bezier(1, 0, 0, 1);
+  -o-transition: all 600ms cubic-bezier(1, 0, 0, 1);
+  -ms-transition: all 600ms cubic-bezier(1, 0, 0, 1);
+  transition: all 600ms cubic-bezier(1, 0, 0, 1);
+  -webkit-transform-origin: 50% 100%;
+  -moz-transform-origin: 50% 100%;
+  -o-transform-origin: 50% 100%;
+  -ms-transform-origin: 50% 100%;
+  transform-origin: 50% 100%; }
+@media -sass-debug-info{filename{}line{font-family:\0000353}}
+  #created.show {
+    opacity: 1;
+    -webkit-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    transform: scale(1, 1); }
+@media -sass-debug-info{filename{}line{font-family:\0000356}}
+  #created .bg {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: #000;
+    opacity: 0.9; }
+@media -sass-debug-info{filename{}line{font-family:\0000364}}
+  #created .created-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 50%;
+    height: 50%; }
+@media -sass-debug-info{filename{}line{font-family:\0000373}}
+    #created .created-overlay a {
+      width: 50%;
+      display: block;
+      float: left;
+      -webkit-transition: all 600ms ease;
+      -moz-transition: all 600ms ease;
+      -o-transition: all 600ms ease;
+      -ms-transition: all 600ms ease;
+      transition: all 600ms ease; }
+@media -sass-debug-info{filename{}line{font-family:\0000378}}
+      #created .created-overlay a:hover {
+        -webkit-transform: scale(1.1, 1.1);
+        -moz-transform: scale(1.1, 1.1);
+        -o-transform: scale(1.1, 1.1);
+        -ms-transform: scale(1.1, 1.1);
+        transform: scale(1.1, 1.1); }
+@media -sass-debug-info{filename{}line{font-family:\0000381}}
+      #created .created-overlay a img {
+        width: 100%;
+        height: auto; }
+@media -sass-debug-info{filename{}line{font-family:\0000384}}
+  #created .close {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    -webkit-transition: all 600ms cubic-bezier(1, 0, 0, 1);
+    -moz-transition: all 600ms cubic-bezier(1, 0, 0, 1);
+    -o-transition: all 600ms cubic-bezier(1, 0, 0, 1);
+    -ms-transition: all 600ms cubic-bezier(1, 0, 0, 1);
+    transition: all 600ms cubic-bezier(1, 0, 0, 1);
+    cursor: pointer; }
+@media -sass-debug-info{filename{}line{font-family:\0000392}}
+    #created .close:hover {
+      -webkit-transform: rotateZ(180deg);
+      -moz-transform: rotateZ(180deg);
+      -o-transform: rotateZ(180deg);
+      -ms-transform: rotateZ(180deg);
+      transform: rotateZ(180deg); }
+
+@media -sass-debug-info{filename{}line{font-family:\0000397}}
 #footer {
   width: 100%;
-  height: 35px;
-  background-color: black; }
-@media -sass-debug-info{filename{}line{font-family:\0000341}}
+  height: 52px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #000; }
+@media -sass-debug-info{filename{}line{font-family:\00003104}}
   #footer p.created {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     padding: 0;
     margin: 0;
     text-align: center;
-    background-color: black;
+    background-color: #000;
     font-family: "Roboto";
     font-weight: 300;
-    color: white;
+    color: #c3c3c3;
     font-size: 11px;
     padding-top: 12px;
     padding-bottom: 10px;
-    width: 50%;
+    width: 100%;
+    opacity: 0.7;
+    -webkit-transition: opacity 0.4s ease-in-out;
+    -moz-transition: opacity 0.4s ease-in-out;
+    -o-transition: opacity 0.4s ease-in-out;
+    -ms-transition: opacity 0.4s ease-in-out;
+    transition: opacity 0.4s ease-in-out;
     margin-left: auto;
-    margin-right: auto; }
-@media -sass-debug-info{filename{}line{font-family:\0000355}}
-  #footer .madero {
-    position: absolute;
-    left: 15px;
-    bottom: 15px;
-    display: none; }
-@media -sass-debug-info{filename{}line{font-family:\0000360}}
-  #footer .wss {
-    position: absolute;
-    right: 15px;
-    bottom: 10px;
-    display: none; }
+    margin-right: auto;
+    cursor: pointer; }
+@media -sass-debug-info{filename{}line{font-family:\00003119}}
+    #footer p.created span {
+      font-family: "Roboto";
+      font-weight: 500; }
+@media -sass-debug-info{filename{}line{font-family:\00003121}}
+    #footer p.created:hover {
+      opacity: 1; }
 
-@media -sass-debug-info{filename{}line{font-family:\0000368}}
+@media -sass-debug-info{filename{}line{font-family:\00003130}}
 .video {
   width: 100%;
   height: 100%;
   position: relative;
   display: block; }
-@media -sass-debug-info{filename{}line{font-family:\0000369}}
+@media -sass-debug-info{filename{}line{font-family:\00003131}}
   .video .dot {
     background-image: url("/img/dot.png");
     width: 100%;
@@ -75,7 +186,7 @@ html, body, .splash {
     position: absolute;
     top: 0;
     left: 0; }
-@media -sass-debug-info{filename{}line{font-family:\0000380}}
+@media -sass-debug-info{filename{}line{font-family:\00003142}}
   .video .splashbg {
     width: 100%;
     height: 100%;
@@ -84,7 +195,7 @@ html, body, .splash {
     background-repeat: no-repeat;
     background-position: 50% 50%; }
 
-@media -sass-debug-info{filename{}line{font-family:\0000389}}
+@media -sass-debug-info{filename{}line{font-family:\00003151}}
 .center-cont {
   width: 550px;
   height: 415px;
@@ -94,7 +205,7 @@ html, body, .splash {
   right: 0;
   bottom: 0;
   margin: auto; }
-@media -sass-debug-info{filename{}line{font-family:\0000399}}
+@media -sass-debug-info{filename{}line{font-family:\00003161}}
   .center-cont .logo {
     width: 550px;
     height: 251px;
@@ -102,15 +213,15 @@ html, body, .splash {
     background-image: url("/img/logo.png");
     background-repeat: no-repeat;
     opacity: 1; }
-@media -sass-debug-info{filename{}line{font-family:\00003110}}
+@media -sass-debug-info{filename{}line{font-family:\00003172}}
   .center-cont .social {
-    width: 130px;
+    width: 180px;
     height: auto;
     overflow: auto;
     margin-left: auto;
     margin-right: auto;
     margin-top: 60px; }
-@media -sass-debug-info{filename{}line{font-family:\00003117}}
+@media -sass-debug-info{filename{}line{font-family:\00003179}}
     .center-cont .social a {
       margin-right: 20px;
       width: 48px;
@@ -119,22 +230,34 @@ html, body, .splash {
       float: left;
       background-position: 50% 50%;
       border-radius: 50%;
-      border-color: #c3c3c3;
-      background-color: #c3c3c3;
+      border-color: #fff;
+      background-color: #fff;
+      opacity: 0.7;
       width: 20px;
       height: 20px;
-      padding: 5px; }
-@media -sass-debug-info{filename{}line{font-family:\00003130}}
+      padding: 5px;
+      -webkit-transition: opacity 0.4s ease;
+      -moz-transition: opacity 0.4s ease;
+      -o-transition: opacity 0.4s ease;
+      -ms-transition: opacity 0.4s ease;
+      transition: opacity 0.4s ease; }
+@media -sass-debug-info{filename{}line{font-family:\00003194}}
+      .center-cont .social a:hover {
+        opacity: 1; }
+@media -sass-debug-info{filename{}line{font-family:\00003197}}
     .center-cont .social a.fb {
       background-image: url("/img/fb.png"); }
-@media -sass-debug-info{filename{}line{font-family:\00003132}}
+@media -sass-debug-info{filename{}line{font-family:\00003199}}
     .center-cont .social a.tw {
       background-image: url("/img/tw.png"); }
-@media -sass-debug-info{filename{}line{font-family:\00003134}}
+@media -sass-debug-info{filename{}line{font-family:\00003201}}
     .center-cont .social a.in {
-      background-image: url("/img/in.png");
+      background-image: url("/img/in.png"); }
+@media -sass-debug-info{filename{}line{font-family:\00003203}}
+    .center-cont .social a.tm {
+      background-image: url("/img/tm.png");
       margin-right: 0; }
-@media -sass-debug-info{filename{}line{font-family:\00003138}}
+@media -sass-debug-info{filename{}line{font-family:\00003207}}
   .center-cont .newsletter-cont {
     width: 106px;
     display: block;
@@ -145,11 +268,11 @@ html, body, .splash {
     -moz-transition: width 0.3s ease-in-out;
     -ms-transition: width 0.3s ease-in-out;
     transition: width 0.3s ease-in-out; }
-@media -sass-debug-info{filename{}line{font-family:\00003149}}
+@media -sass-debug-info{filename{}line{font-family:\00003218}}
     .center-cont .newsletter-cont input.email {
       float: left;
       display: block;
-      color: white;
+      color: #fff;
       width: 0;
       height: 38px;
       text-align: center;
@@ -157,36 +280,36 @@ html, body, .splash {
       -webkit-focus-ring-color: none;
       border-radius: 0;
       -webkit-appearance: none;
-      background-color: black;
+      background-color: #000;
       margin-right: 0;
       -webkit-transition: all 0.3s ease-in-out;
       -moz-transition: all 0.3s ease-in-out;
       -ms-transition: all 0.3s ease-in-out;
       transition: all 0.3s ease-in-out; }
-@media -sass-debug-info{filename{}line{font-family:\00003166}}
+@media -sass-debug-info{filename{}line{font-family:\00003235}}
     .center-cont .newsletter-cont.show {
       width: 248px;
       -webkit-transition: width 0.3s ease-in-out;
       -moz-transition: width 0.3s ease-in-out;
       -ms-transition: width 0.3s ease-in-out;
       transition: width 0.3s ease-in-out; }
-@media -sass-debug-info{filename{}line{font-family:\00003172}}
+@media -sass-debug-info{filename{}line{font-family:\00003241}}
       .center-cont .newsletter-cont.show input.email {
-        border: 1px dotted #c3c3c3;
+        border: 1px dotted #C3C3C3;
         margin-right: 10px;
         -webkit-transition: all 0.4s ease-in-out;
         -moz-transition: all 0.4s ease-in-out;
         -ms-transition: all 0.4s ease-in-out;
         transition: all 0.4s ease-in-out;
         width: 128px; }
-@media -sass-debug-info{filename{}line{font-family:\00003181}}
+@media -sass-debug-info{filename{}line{font-family:\00003250}}
     .center-cont .newsletter-cont .newsbtn {
       float: left;
       height: 20px;
       width: 76px;
       display: block;
-      background-color: black;
-      color: white;
+      background-color: #000;
+      color: #fff;
       padding: 11px;
       text-align: center;
       cursor: pointer;
@@ -200,7 +323,21 @@ html, body, .splash {
       -moz-user-select: none;
       -ms-user-select: none;
       user-select: none; }
-@media -sass-debug-info{filename{}line{font-family:\00003198}}
+@media -sass-debug-info{filename{}line{font-family:\00003264}}
+      .center-cont .newsletter-cont .newsbtn.showSubscribe, .center-cont .newsletter-cont .newsbtn.sendformBtn {
+        -webkit-transition: all 600ms cubic-bezier(1, 0, 0, 1);
+        -moz-transition: all 600ms cubic-bezier(1, 0, 0, 1);
+        -o-transition: all 600ms cubic-bezier(1, 0, 0, 1);
+        -ms-transition: all 600ms cubic-bezier(1, 0, 0, 1);
+        transition: all 600ms cubic-bezier(1, 0, 0, 1); }
+@media -sass-debug-info{filename{}line{font-family:\00003267}}
+        .center-cont .newsletter-cont .newsbtn.showSubscribe:hover, .center-cont .newsletter-cont .newsbtn.sendformBtn:hover {
+          -webkit-transform: scale(1.1, 1.1);
+          -moz-transform: scale(1.1, 1.1);
+          -o-transform: scale(1.1, 1.1);
+          -ms-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1); }
+@media -sass-debug-info{filename{}line{font-family:\00003271}}
       .center-cont .newsletter-cont .newsbtn p {
         font-size: 16px;
         font-family: "Times New Roman";
