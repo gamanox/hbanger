@@ -17,6 +17,8 @@ exports.config =
         before: [
           'vendor/scripts/jquery/jquery-1.9.1.js'
           'vendor/scripts/jquery/jqueryform.js'
+          'vendor/scripts/facebook.js'
+          'vendor/scripts/jquery/animationscroll.js'
           #'vendor/scripts/angular/angular.js'
           #'vendor/angularui/angular-ui.js'
           #'vendor/angularui/angular-ui-ieshiv.js'

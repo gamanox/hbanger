@@ -1,4 +1,111 @@
-var orientationEvent, pageView, resize, supportsOrientationChange, validateEmail;
+var addSubscriber, get_age, orientationEvent, pageView, resize, supportsOrientationChange, validateEmail;
+
+jQuery(function() {
+  $('body').prepend('<div id="fb-root"></div>');
+  return $.ajax({
+    url: "" + window.location.protocol + "//connect.facebook.net/en_US/all.js",
+    dataType: 'script',
+    cache: true
+  });
+});
+
+get_age = function(born, now) {
+  var birthday;
+  birthday = new Date(now.getFullYear(), born.getMonth(), born.getDate());
+  if (now >= birthday) {
+    return now.getFullYear() - born.getFullYear();
+  } else {
+    return now.getFullYear() - born.getFullYear() - 1;
+  }
+};
+
+$("#button").click(function() {});
+
+addSubscriber = function(correo) {};
+
+window.fbAsyncInit = function() {
+  FB.init({
+    appId: '303987353132508',
+    cookie: true
+  });
+  addSubscriber = function() {
+    return FB.getLoginStatus(function(response) {
+      console.log(response.status);
+      if (response.status === 'connected') {
+        FB.api("/me", function(response) {
+          var age, birthdate, born, city, country, dob, email, fulllocation, fullname, gender, location, now, state, url;
+          console.log(JSON.stringify(response));
+          dob = response.birthday;
+          now = new Date();
+          fulllocation = response.location.name;
+          location = fulllocation.split(", ");
+          birthdate = dob.split("/");
+          born = new Date(birthdate[2], birthdate[1] - 1, birthdate[0]);
+          age = get_age(born, now);
+          console.log(birthdate[2] + " : " + birthdate[1] + " : " + birthdate[0]);
+          email = response.email;
+          fullname = response.name;
+          city = location[0];
+          state = location[1];
+          country = location[2];
+          gender = response.gender;
+          console.log('nombre: ' + fullname);
+          console.log('edad: ' + age);
+          console.log('email: ' + email);
+          console.log('ciudad: ' + city);
+          console.log('estado: ' + state);
+          console.log('pais: ' + country);
+          return url = "http://api.mynewsletterbuilder.com/1.0.2/Subscribe/json/?api_key=aaddbdd8202a5128b7f806aaf9047215&lists=436693&details[custom_2]=" + gender + "&details[custom_1]=" + age + "&details[full_name]=" + fullname + "&details[email]=" + email + "&details[city]=" + city + "&details[state]=" + state + "&details[country]=" + country;
+        });
+        return console.log('conectado');
+      } else if (response.status === 'not_authorized') {
+        console.log('not_authorized');
+        return FB.api("/me", function(response) {
+          var age, birthdate, born, city, country, dob, email, fulllocation, fullname, gender, location, now, state, url;
+          console.log(JSON.stringify(response));
+          dob = response.birthday;
+          now = new Date();
+          fulllocation = response.location.name;
+          location = fulllocation.split(", ");
+          birthdate = dob.split("/");
+          born = new Date(birthdate[2], birthdate[1] - 1, birthdate[0]);
+          age = get_age(born, now);
+          console.log(birthdate[2] + " : " + birthdate[1] + " : " + birthdate[0]);
+          email = response.email;
+          fullname = response.name;
+          city = location[0];
+          state = location[1];
+          country = location[2];
+          gender = response.gender;
+          console.log('nombre: ' + fullname);
+          console.log('edad: ' + age);
+          console.log('ciudad: ' + city);
+          console.log('estado: ' + state);
+          console.log('pais: ' + country);
+          return url = "http://api.mynewsletterbuilder.com/1.0.2/Subscribe/json/?api_key=aaddbdd8202a5128b7f806aaf9047215&lists=436693&details[custom_2]=" + gender + "&details[custom_1]=" + age + "&details[full_name]=" + fullname + "&details[email]=" + email + "&details[city]=" + city + "&details[state]=" + state + "&details[country]=" + country;
+        });
+      } else {
+        FB.login(function(response) {
+          console.log('login fb');
+          return console.log('login response: ' + response);
+        });
+        return console.log('The person is not logged into Facebook');
+      }
+    });
+  };
+  $('#sign_in').click(function(e) {
+    e.preventDefault();
+    return FB.login(function(response) {
+      if (response.authResponse) {
+        return window.location = '/auth/facebook';
+      }
+    });
+  });
+  return $('.showSubscribe').on('click', function(e) {
+    e.preventDefault();
+    return addSubscriber();
+  });
+};
 
 validateEmail = function($email) {
   var emailReg;
@@ -76,7 +183,13 @@ resize = function() {
 };
 
 $(function() {
-  var error, sendNewsletter;
+  var error, sendNewsletter, wH, wW;
+  $(document.body).on("appear", ".shown", function(e, $affected) {
+    $(this).addClass("appeared");
+  });
+  $(".shown").appear({
+    force_process: true
+  });
   $('#footer .created').on('click', function() {
     return $('#created').addClass('show');
   });
@@ -89,40 +202,9 @@ $(function() {
   error = function(response, status, xhr) {
     alert("error");
   };
-  $('.showSubscribe').on('click', function() {
-    $('.newsbtn').removeClass('showSubscribe');
-    $('.newsbtn').addClass('sendformBtn');
-    $('.newsletter-cont').addClass('show');
-    $('.newsbtn p').html('subscribe');
-    return $('.sendformBtn').on('click', function() {
-      var email, emailaddress, url;
-      $('.newsbtn p').html('Sending');
-      emailaddress = $('.email').val();
-      if (!validateEmail(emailaddress)) {
-        $('.email').val('');
-        $('.email').attr({
-          placeholder: 'wrong email'
-        });
-        return $('.newsbtn p').html('subscribe');
-      } else {
-        email = $('.email').val();
-        url = "http://api.mynewsletterbuilder.com/1.0.2/Subscribe/json/?api_key=aaddbdd8202a5128b7f806aaf9047215&lists=436693&details[email]=" + email;
-        console.log(url);
-        $.ajax({
-          url: url,
-          type: "POST",
-          crossDomain: true
-        });
-        $('.newsletter-cont').removeClass('show');
-        $('.newsbtn p').html('Thanks');
-        pageView('newsletter/sign_up');
-        return setTimeout(function() {
-          $('.newsbtn').removeClass('sendformBtn');
-          return $('.newsbtn').addClass('showSubscribe');
-        }, 2000);
-      }
-    });
-  });
+  wH = $(window).height();
+  wW = $(window).width();
+  $('.splash').height(wH);
   if (navigator.userAgent.match(/iPad/i)) {
     $("#viewport").attr("content", "width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0");
     if (window.orientation === 0) {

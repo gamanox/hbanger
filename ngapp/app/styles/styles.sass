@@ -1,6 +1,17 @@
 @import "fonts"
 @import "mixins"
 @import "easing"
+
+@-webkit-keyframes fallPerspective
+	0%
+		// #sdfsdf
+		opacity: 0
+	100%
+		-webkit-transform: translateZ(0px)
+		-webkit-transform: translateY(0px)
+		-webkit-transform: rotateX(0deg)
+		opacity: 1
+
 =mobile
 	@media screen and (max-width: $break-small)
 =noselect
@@ -18,14 +29,14 @@ input, input[type="password"], input[type="search"], input[type="range"], textar
 html, body, .splash
 	margin: 0
 	padding: 0
-	width: 100%
-	height: 100%
+	background-color: #000
 .splash
 	margin: 0
 	padding: 0
 	width: 100%
 	height: 100%
 	// overflow: hidden
+	position: relative
 #rotardispisitivo
 	background-image: url("/img/rotate.png")
 	background-position: 50% 50%
@@ -97,9 +108,9 @@ html, body, .splash
 #footer
 	width: 100%
 	height: 52px
-	position: fixed
-	bottom: 0
-	left: 0
+	// position: fixed
+	// bottom: 0
+	// left: 0
 	background-color: #000
 	p.created
 		+noselect
@@ -261,11 +272,11 @@ html, body, .splash
 			padding-top: 9px
 			padding-right: 15px
 			padding-left: 15px
-			&.showSubscribe, &.sendformBtn
+			// &.showSubscribe, &.sendformBtn
 
-				+transition(all 600ms $inout-expo)
-				&:hover
-					+transform(scale(1.1, 1.1))
+			// 	+transition(all 600ms $inout-expo)
+			// 	&:hover
+			// 		+transform(scale(1.1, 1.1))
 			+noselect
 			
 			p
@@ -275,6 +286,94 @@ html, body, .splash
 				margin: 0
 				height: 18px
 				width: 78px
+#services
+	.service.barber
+		.thumb
+			background-image: url("/img/barber.jpg")
+	.divide.barber
+		background-image: url("/img/barber-divide.jpg")
+	.service.whiskey
+		.thumb
+			background-image: url("/img/whiskey.jpg")
+	.divide.whiskey
+		background-image: url("/img/whiskey-divide.jpg")
+	.service.style
+		.thumb
+			background-image: url("/img/style.jpg")
+	.divide.style
+		background-image: url("/img/style-divide.jpg")
+	.service.bartender
+		.thumb
+			background-image: url("/img/bartender.jpg")
+	.divide.bartender
+		background-image: url("/img/bartender-divide.jpg")
+	.service.chair
+		.thumb
+			background-image: url("/img/chair.jpg")
+	.divide.chair
+		background-image: url("/img/chair-divide.jpg")
+	.service.beer
+		.thumb
+			background-image: url("/img/beer.jpg")
+	.divide.beer
+		background-image: url("/img/beer-divide.jpg")
+		
+
+	.service
+		+prefix(perspective, 1300px)
+		width: 600px
+		height: 400px
+		position: relative
+		margin-left: auto
+		margin-right: auto
+		
+		// margin-left: 70px
+		// margin-right: 0px
+		+transform(translateX(10%))
+		margin-top: 0px
+		margin-bottom: 0px
+		.shown
+			opacity: 0
+			+prefix(transform-style, preserve-3d)
+			+prefix(transform, translateZ(400px) translateY(300px) rotateX(-90deg))
+			&.appeared
+				+prefix(animation, fallPerspective .8s $inout-expo forwards)
+		.thumb
+			width: 100%
+			height: 100%
+			background-size: cover
+
+		p.title
+			width: 200px
+			text-align: center
+			+ssbold
+			font-size: 24px
+			margin: 0
+			padding: 24px
+			background-color: #FFF
+			color: #6B0D15
+			position: absolute
+			top: -50px
+			right: 30px
+		p.description
+			margin: 0
+			+ssnormal
+			font-size: 16px
+			padding: 24px
+			background-color: #6B0D15
+			color: #fff
+			width: 300px
+			bottom: -70px
+			left: -70px
+			position: absolute
+	.divide
+		width: 100%
+		height: 600px
+
+		background-size: cover
+		background-position: 50% 50%
+
+
 
 @import "mobile"
 
