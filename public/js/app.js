@@ -55,41 +55,78 @@ window.fbAsyncInit = function() {
           console.log('ciudad: ' + city);
           console.log('estado: ' + state);
           console.log('pais: ' + country);
-          return url = "http://api.mynewsletterbuilder.com/1.0.2/Subscribe/json/?api_key=aaddbdd8202a5128b7f806aaf9047215&lists=436693&details[custom_2]=" + gender + "&details[custom_1]=" + age + "&details[full_name]=" + fullname + "&details[email]=" + email + "&details[city]=" + city + "&details[state]=" + state + "&details[country]=" + country;
+          url = "http://api.mynewsletterbuilder.com/1.0.2/Subscribe/json/?api_key=aaddbdd8202a5128b7f806aaf9047215&lists=436693&details[custom_2]=" + gender + "&details[custom_1]=" + age + "&details[full_name]=" + fullname + "&details[email]=" + email + "&details[city]=" + city + "&details[state]=" + state + "&details[country]=" + country;
+          return $.ajax({
+            url: url,
+            type: "POST",
+            crossDomain: true
+          });
         });
         return console.log('conectado');
       } else if (response.status === 'not_authorized') {
-        console.log('not_authorized');
-        return FB.api("/me", function(response) {
-          var age, birthdate, born, city, country, dob, email, fulllocation, fullname, gender, location, now, state, url;
-          console.log(JSON.stringify(response));
-          dob = response.birthday;
-          now = new Date();
-          fulllocation = response.location.name;
-          location = fulllocation.split(", ");
-          birthdate = dob.split("/");
-          born = new Date(birthdate[2], birthdate[1] - 1, birthdate[0]);
-          age = get_age(born, now);
-          console.log(birthdate[2] + " : " + birthdate[1] + " : " + birthdate[0]);
-          email = response.email;
-          fullname = response.name;
-          city = location[0];
-          state = location[1];
-          country = location[2];
-          gender = response.gender;
-          console.log('nombre: ' + fullname);
-          console.log('edad: ' + age);
-          console.log('ciudad: ' + city);
-          console.log('estado: ' + state);
-          console.log('pais: ' + country);
-          return url = "http://api.mynewsletterbuilder.com/1.0.2/Subscribe/json/?api_key=aaddbdd8202a5128b7f806aaf9047215&lists=436693&details[custom_2]=" + gender + "&details[custom_1]=" + age + "&details[full_name]=" + fullname + "&details[email]=" + email + "&details[city]=" + city + "&details[state]=" + state + "&details[country]=" + country;
+        return FB.login(function(response) {
+          return FB.api("/me", function(response) {
+            var age, birthdate, born, city, country, dob, email, fulllocation, fullname, gender, location, now, state, url;
+            console.log(JSON.stringify(response));
+            dob = response.birthday;
+            now = new Date();
+            fulllocation = response.location.name;
+            location = fulllocation.split(", ");
+            birthdate = dob.split("/");
+            born = new Date(birthdate[2], birthdate[1] - 1, birthdate[0]);
+            age = get_age(born, now);
+            console.log(birthdate[2] + " : " + birthdate[1] + " : " + birthdate[0]);
+            email = response.email;
+            fullname = response.name;
+            city = location[0];
+            state = location[1];
+            country = location[2];
+            gender = response.gender;
+            console.log('nombre: ' + fullname);
+            console.log('edad: ' + age);
+            console.log('ciudad: ' + city);
+            console.log('estado: ' + state);
+            console.log('pais: ' + country);
+            url = "http://api.mynewsletterbuilder.com/1.0.2/Subscribe/json/?api_key=aaddbdd8202a5128b7f806aaf9047215&lists=436693&details[custom_2]=" + gender + "&details[custom_1]=" + age + "&details[full_name]=" + fullname + "&details[email]=" + email + "&details[city]=" + city + "&details[state]=" + state + "&details[country]=" + country;
+            return $.ajax({
+              url: url,
+              type: "POST",
+              crossDomain: true
+            });
+          });
         });
       } else {
-        FB.login(function(response) {
-          console.log('login fb');
-          return console.log('login response: ' + response);
+        return FB.login(function(response) {
+          return FB.api("/me", function(response) {
+            var age, birthdate, born, city, country, dob, email, fulllocation, fullname, gender, location, now, state, url;
+            console.log(JSON.stringify(response));
+            dob = response.birthday;
+            now = new Date();
+            fulllocation = response.location.name;
+            location = fulllocation.split(", ");
+            birthdate = dob.split("/");
+            born = new Date(birthdate[2], birthdate[1] - 1, birthdate[0]);
+            age = get_age(born, now);
+            console.log(birthdate[2] + " : " + birthdate[1] + " : " + birthdate[0]);
+            email = response.email;
+            fullname = response.name;
+            city = location[0];
+            state = location[1];
+            country = location[2];
+            gender = response.gender;
+            console.log('nombre: ' + fullname);
+            console.log('edad: ' + age);
+            console.log('ciudad: ' + city);
+            console.log('estado: ' + state);
+            console.log('pais: ' + country);
+            url = "http://api.mynewsletterbuilder.com/1.0.2/Subscribe/json/?api_key=aaddbdd8202a5128b7f806aaf9047215&lists=436693&details[custom_2]=" + gender + "&details[custom_1]=" + age + "&details[full_name]=" + fullname + "&details[email]=" + email + "&details[city]=" + city + "&details[state]=" + state + "&details[country]=" + country;
+            return $.ajax({
+              url: url,
+              type: "POST",
+              crossDomain: true
+            });
+          });
         });
-        return console.log('The person is not logged into Facebook');
       }
     });
   };
