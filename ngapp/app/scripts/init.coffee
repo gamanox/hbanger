@@ -69,54 +69,80 @@ window.fbAsyncInit = ->
 
           url="http://api.mynewsletterbuilder.com/1.0.2/Subscribe/json/?api_key=aaddbdd8202a5128b7f806aaf9047215&lists=436693&details[custom_2]="+gender+"&details[custom_1]="+age+"&details[full_name]="+fullname+"&details[email]="+email+"&details[city]="+city+"&details[state]="+state+"&details[country]="+country
           # console.log url
-          # $.ajax
-          #   url: url
-          #   type: "POST"
-          #   crossDomain: true
+          $.ajax
+            url: url
+            type: "POST"
+            crossDomain: true
           
         console.log 'conectado'
       else if response.status is 'not_authorized'
         #The person is logged into Facebook, but not your app.
-        console.log 'not_authorized'
-        FB.api "/me", (response) ->
-          console.log JSON.stringify(response)
-          dob = response.birthday
-          now = new Date()
-          fulllocation = response.location.name
-          location = fulllocation.split(", ")
+        FB.login (response) ->
+          FB.api "/me", (response) ->
+            console.log JSON.stringify(response)
+            dob = response.birthday
+            now = new Date()
+            fulllocation = response.location.name
+            location = fulllocation.split(", ")
 
-          birthdate = dob.split("/")
-          born = new Date(birthdate[2], birthdate[1] - 1, birthdate[0])
-          age = get_age(born, now)
-          console.log birthdate[2] + " : " + birthdate[1] + " : " + birthdate[0]
+            birthdate = dob.split("/")
+            born = new Date(birthdate[2], birthdate[1] - 1, birthdate[0])
+            age = get_age(born, now)
+            console.log birthdate[2] + " : " + birthdate[1] + " : " + birthdate[0]
 
 
-          email = response.email
-          fullname = response.name
-          city = location[0]
-          state = location[1]
-          country = location[2]
-          gender = response.gender
-          console.log 'nombre: '+fullname
-          console.log 'edad: '+age
-          console.log 'ciudad: '+city
-          console.log 'estado: '+state
-          console.log 'pais: '+country
+            email = response.email
+            fullname = response.name
+            city = location[0]
+            state = location[1]
+            country = location[2]
+            gender = response.gender
+            console.log 'nombre: '+fullname
+            console.log 'edad: '+age
+            console.log 'ciudad: '+city
+            console.log 'estado: '+state
+            console.log 'pais: '+country
 
-          url="http://api.mynewsletterbuilder.com/1.0.2/Subscribe/json/?api_key=aaddbdd8202a5128b7f806aaf9047215&lists=436693&details[custom_2]="+gender+"&details[custom_1]="+age+"&details[full_name]="+fullname+"&details[email]="+email+"&details[city]="+city+"&details[state]="+state+"&details[country]="+country
-          # console.log url
-          # $.ajax
-          #   url: url
-          #   type: "POST"
-          #   crossDomain: true
+            url="http://api.mynewsletterbuilder.com/1.0.2/Subscribe/json/?api_key=aaddbdd8202a5128b7f806aaf9047215&lists=436693&details[custom_2]="+gender+"&details[custom_1]="+age+"&details[full_name]="+fullname+"&details[email]="+email+"&details[city]="+city+"&details[state]="+state+"&details[country]="+country
+            # console.log url
+            $.ajax
+              url: url
+              type: "POST"
+              crossDomain: true
 
       else
         FB.login (response) ->
-          console.log 'login fb'
-          console.log 'login response: '+response
-        #The person is not logged into Facebook, so we're not sure if
-        #they are logged into this app or not.
-        console.log 'The person is not logged into Facebook'
+          FB.api "/me", (response) ->
+            console.log JSON.stringify(response)
+            dob = response.birthday
+            now = new Date()
+            fulllocation = response.location.name
+            location = fulllocation.split(", ")
+
+            birthdate = dob.split("/")
+            born = new Date(birthdate[2], birthdate[1] - 1, birthdate[0])
+            age = get_age(born, now)
+            console.log birthdate[2] + " : " + birthdate[1] + " : " + birthdate[0]
+
+
+            email = response.email
+            fullname = response.name
+            city = location[0]
+            state = location[1]
+            country = location[2]
+            gender = response.gender
+            console.log 'nombre: '+fullname
+            console.log 'edad: '+age
+            console.log 'ciudad: '+city
+            console.log 'estado: '+state
+            console.log 'pais: '+country
+
+            url="http://api.mynewsletterbuilder.com/1.0.2/Subscribe/json/?api_key=aaddbdd8202a5128b7f806aaf9047215&lists=436693&details[custom_2]="+gender+"&details[custom_1]="+age+"&details[full_name]="+fullname+"&details[email]="+email+"&details[city]="+city+"&details[state]="+state+"&details[country]="+country
+            # console.log url
+            $.ajax
+              url: url
+              type: "POST"
+              crossDomain: true
 
   $('#sign_in').click (e) ->
     e.preventDefault()
